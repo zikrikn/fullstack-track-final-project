@@ -22,7 +22,22 @@ The database structure for this application includes three main collections: `vi
      - `comment`: The user's comment.
      - `timestamp`: The timestamp indicating when the comment was submitted (defaulted to the current date and time).
 
-ii. API Structure:
+ii. Folder Structure:
+```- controllers
+  - videoController.js
+  - productController.js
+  - commentController.js
+- models
+  - video.js
+  - product.js
+  - comment.js
+- services
+  - videoService.js
+  - productService.js
+  - commentService.js
+- routes.js```
+
+iii. API Structure:
 
 The API structure follows RESTful principles, using Express.js as the server framework. It consists of three main endpoints, each corresponding to a specific feature:
 
@@ -44,7 +59,7 @@ The API structure follows RESTful principles, using Express.js as the server fra
    - HTTP Method: POST
    - Purpose: Submits a new comment for a specific video and saves it in the database.
 
-iii. List API Requests and Responses:
+iv. List API Requests and Responses:
 
 1. Video Thumbnail List:
    - Request:
@@ -133,3 +148,51 @@ iii. List API Requests and Responses:
        "message": "Internal server error"
      }
      ```
+
+v. How to run in local
+To run your Express.js application with the MongoDB database locally, follow these steps:
+
+1. Install MongoDB: Download and install MongoDB on your local machine. You can find the installation instructions for your specific operating system on the MongoDB website: https://docs.mongodb.com/manual/installation/
+
+2. Clone your project: If you haven't already, clone your project repository to your local machine.
+
+3. Install dependencies: Open a terminal or command prompt, navigate to the root folder of your project, and run the following command to install the required dependencies specified in your `package.json`:
+
+```
+npm install
+```
+
+4. Start MongoDB: Start the MongoDB server on your local machine. Depending on your installation method, this may involve running a command like `mongod` or starting the MongoDB service.
+
+5. Connect to MongoDB: In your Express.js application, ensure that you have set up the connection to the local MongoDB database. Typically, this is done in the `app.js` or `index.js` file. Use the `mongoose.connect()` method to establish the connection. For example:
+
+```javascript
+const mongoose = require('mongoose');
+const mongoURI = 'mongodb://localhost:27017/your_database_name';
+
+mongoose.connect(mongoURI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useFindAndModify: false,
+})
+  .then(() => {
+    console.log('Connected to MongoDB');
+  })
+  .catch((err) => {
+    console.error('Error connecting to MongoDB:', err);
+  });
+```
+
+Replace `'your_database_name'` with the name of your MongoDB database.
+
+6. Start the server: Start your Express.js server using the following command:
+
+```
+npm start
+```
+
+This command will run the script defined in your `package.json` to start your server..
+
+7. Access your application: Once the server is running, you can access your application in your web browser by navigating to `http://localhost:port`, where `port` is the port number specified in your Express.js configuration (e.g., 3000, 8080, etc.). The default to port is 3000 for this project.
+
+8. Test the APIs: Use tools like cURL, Postman, or your favorite web browser to test the different endpoints and functionalities of your REST API.
