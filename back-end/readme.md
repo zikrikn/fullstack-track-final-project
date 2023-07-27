@@ -71,12 +71,14 @@ iv. List API Requests and Responses:
      ```
      [
        {
-         "videoId": "abc123",
-         "thumbnailUrl": "https://example.com/thumbnail1.jpg"
+         "_id": <bson.ObjectId>,
+         "videoId": <videoId>,
+         "thumbnailUrl": string
        },
        {
-         "videoId": "xyz456",
-         "thumbnailUrl": "https://example.com/thumbnail2.jpg"
+         "_id": <bson.ObjectId>,
+         "videoId": <videoId>,
+         "thumbnailUrl": string
        },
        ...
      ]
@@ -90,16 +92,16 @@ iv. List API Requests and Responses:
      ```
      [
        {
-         "videoId": "abc123",
-         "link": "https://example.com/product1",
-         "title": "Product 1",
-         "price": 19.99
+         "videoId": <videoId>,
+         "link": string,
+         "title": string,
+         "price": float
        },
        {
-         "videoId": "abc123",
-         "link": "https://example.com/product2",
-         "title": "Product 2",
-         "price": 25.99
+         "videoId": <videoId>,
+         "link": string,
+         "title": string,
+         "price": float
        },
        ...
      ]
@@ -113,14 +115,16 @@ iv. List API Requests and Responses:
      ```
      [
        {
-         "username": "User1",
-         "comment": "This video is great!",
-         "timestamp": "2023-07-21T12:34:56.789Z"
+         "_id": <bson.ObjectId>,
+         "username": string,
+         "comment": string,
+         "timestamp": timestamp
        },
        {
-         "username": "User2",
-         "comment": "Nice video content!",
-         "timestamp": "2023-07-21T13:45:22.111Z"
+         "_id": <bson.ObjectId>,
+         "username": string,
+         "comment": string,
+         "timestamp": timestamp
        },
        ...
      ]
@@ -133,22 +137,24 @@ iv. List API Requests and Responses:
      - Payload:
        ```
        {
-         "username": "NewUser",
-         "comment": "Awesome video!",
-         "videoId": "abc123"
+         "username": string,
+         "comment": string,
+         "videoId": <videoId>
        }
        ```
    - Response (Success):
      ```
-     {
-       "success": true
-     }
-     ```
-   - Response (Fail - Error Status 500):
-     ```
-     {
-       "message": "Internal server error"
-     }
+    {
+      "success": true,
+      "comment": {
+        "videoId": <videoId>,
+        "username": string,
+        "comment": string,
+        "_id": "<bson.ObjectId>",
+        "timestamp": timestamp,
+        "__v": 0
+      }
+    }
      ```
 
 v. How to run in local
