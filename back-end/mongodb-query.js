@@ -1,3 +1,6 @@
+// Make database "tokoplay"
+use.tokoplay;
+
 // Insert Data Videos to MongoDB
 db.videos.insertMany([
   {
