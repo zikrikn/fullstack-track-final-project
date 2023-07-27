@@ -175,23 +175,11 @@ npm install
 
 5.  Run the `mongodb-query.js` script to populate your database with the sample data. This script will create a new database called `tokoplay` and populate it with the sample data from the `mongodb-query.json` file. You can run using mongoshell or MongoDB Compass.
 
-6. Connect to MongoDB: In your Express.js application, ensure that you have set up the connection to the local MongoDB database. Open `app.js` and edit `mongoose.connect()`:
+6. Connect to MongoDB: In your Express.js application, ensure that you have set up the connection to the local MongoDB database. Open and edit mongoURI variable in `app.js`:
 
 ```javascript
 const mongoose = require('mongoose');
 const mongoURI = 'mongodb://localhost:27017/your_database_name';
-
-mongoose.connect(mongoURI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useFindAndModify: false,
-})
-  .then(() => {
-    console.log('Connected to MongoDB');
-  })
-  .catch((err) => {
-    console.error('Error connecting to MongoDB:', err);
-  });
 ```
 
 Replace `'your_database_name'` with the name of your MongoDB database.
