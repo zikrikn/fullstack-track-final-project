@@ -23,6 +23,7 @@ The database structure for this application includes three main collections: `vi
      - `timestamp`: The timestamp indicating when the comment was submitted (defaulted to the current date and time).
 
 ii. Folder Structure:
+```
 - controllers
   - videoController.js
   - productController.js
@@ -36,6 +37,7 @@ ii. Folder Structure:
   - productService.js
   - commentService.js
 - routes.js
+```
 
 iii. API Structure:
 
