@@ -36,7 +36,8 @@ ii. Folder Structure:
   - videoService.js
   - productService.js
   - commentService.js
-- routes.js
+- routes
+  - route.js
 ```
 
 iii. API Structure:
