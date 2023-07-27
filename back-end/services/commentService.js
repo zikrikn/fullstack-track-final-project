@@ -1,4 +1,3 @@
-// services/commentService.js
 const Comment = require("../models/comment");
 
 class CommentService {

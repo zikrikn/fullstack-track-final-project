@@ -1,4 +1,3 @@
-// services/videoService.js
 const Video = require('../models/video');
 
 class VideoService {

@@ -1,4 +1,3 @@
-// services/productService.js
 const Product = require('../models/product');
 
 class ProductService {
