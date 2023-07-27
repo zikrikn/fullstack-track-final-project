@@ -172,7 +172,9 @@ npm install
 
 4. Start MongoDB: Start the MongoDB server on your local machine. Depending on your installation method, this may involve running a command like `mongod` or starting the MongoDB service.
 
-5. Connect to MongoDB: In your Express.js application, ensure that you have set up the connection to the local MongoDB database. Typically, this is done in the `app.js` or `index.js` file. Use the `mongoose.connect()` method to establish the connection. For example:
+5.  Run the `mongodb-query.js` script to populate your database with the sample data. This script will create a new database called `tokoplay` and populate it with the sample data from the `mongodb-query.json` file. You can run using mongoshell or MongoDB Compass.
+
+6. Connect to MongoDB: In your Express.js application, ensure that you have set up the connection to the local MongoDB database. Open `app.js` and edit `mongoose.connect()`:
 
 ```javascript
 const mongoose = require('mongoose');
@@ -193,14 +195,12 @@ mongoose.connect(mongoURI, {
 
 Replace `'your_database_name'` with the name of your MongoDB database.
 
-6. Start the server: Start your Express.js server using the following command:
+7. Start the server: Start your Express.js server using the following command:
 
 ```
 npm start
 ```
 
-This command will run the script defined in your `package.json` to start your server..
+8. Access your application: Once the server is running, you can access your application in your web browser by navigating to `http://localhost:port`, where `port` is the port number specified in your Express.js configuration (e.g., 3000, 8080, etc.). The default to port for this project is 3000.
 
-7. Access your application: Once the server is running, you can access your application in your web browser by navigating to `http://localhost:port`, where `port` is the port number specified in your Express.js configuration (e.g., 3000, 8080, etc.). The default to port is 3000 for this project.
-
-8. Test the APIs: Use tools like cURL, Postman, or your favorite web browser to test the different endpoints and functionalities of your REST API.
+9. Test the APIs: Use tools like cURL, Postman, or your favorite web browser to test the different endpoints and functionalities of your REST API.
