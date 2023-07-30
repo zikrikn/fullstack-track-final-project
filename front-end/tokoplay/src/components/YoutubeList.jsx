@@ -20,7 +20,7 @@ const App = () => (
       sm: 2,
       md: 4,
       lg: 4,
-      xl: 5,
+      xl: 6,
       xxl: 3,
     }}
     dataSource={data}
@@ -28,7 +28,7 @@ const App = () => (
       <List.Item>
           <Card
             hoverable
-            cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
+            cover={<img alt="example" src="https://img.youtube.com/vi/hCPYxwLSZM4/maxresdefault.jpg" />}
           >
               <Tag className="live-tag" color="#f50">
                 LIVE

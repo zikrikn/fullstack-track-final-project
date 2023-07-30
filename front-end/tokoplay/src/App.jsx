@@ -57,7 +57,7 @@ const App = () => (
       </Layout>
       </Content>
       <Footer style={footerStyle}>
-        Ant Design ©2023 Created by Ant UED
+        Tokoplay ©2023 Created by Zikri
       </Footer>
     </Layout>
   </Space>

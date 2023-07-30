@@ -7,7 +7,8 @@ const App = () => (
   style={{ margin:'0 0 10px 0' }}
   >
     <p>
-      Nama: Card content
+      Card content
+      <br />
       Price: $120
     </p>
   </Card>
@@ -16,7 +17,8 @@ const App = () => (
   style={{ margin:'0 0 10px 0' }}
   >
     <p>
-      Nama: Card content
+      Card content
+      <br />
       Price: $120
     </p>
   </Card>
@@ -25,7 +27,8 @@ const App = () => (
   style={{ margin:'0 0 10px 0' }}
   >
     <p>
-      Nama: Card content
+      Card content
+      <br />  
       Price: $120
     </p>
   </Card>

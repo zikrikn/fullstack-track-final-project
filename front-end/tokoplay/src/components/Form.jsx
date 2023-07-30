@@ -1,8 +1,5 @@
-import { Button, Form, Input} from 'antd';
+import { Button, Form, Input, Card, Divider } from 'antd';
 const layout = {
-  labelCol: {
-    span: 8,
-  },
   wrapperCol: {
     span: 16,
   },
@@ -19,14 +16,26 @@ const onFinish = (values) => {
 };
 const AddForm = () => (
   <>
-  <h2>Kolom Komentar</h2>
+  <h2>Comments</h2>
+  <Card>
+  <p style={{textAlign: 'left'}}>
+    From: <strong>Bella</strong>
+    <br />
+    Hello Dunia!
+  </p>
+  <Divider />
+  <p style={{textAlign: 'left'}}>
+    From: <strong>Zikri</strong>
+    <br />
+    Hello Dunia!
+  </p>
+  <Divider />
   <Form
     {...layout}
     name="nest-messages"
     onFinish={onFinish}
     style={{
       maxWidth: 600,
-      padding: '0 10px 0 10px'
     }}
     validateMessages={validateMessages}
   >
@@ -41,7 +50,7 @@ const AddForm = () => (
     >
       <Input />
     </Form.Item>
-    <Form.Item name={['user', 'comments']} label="Comment">
+    <Form.Item name={['user', 'comments']} label="Pesan">
       <Input.TextArea />
     </Form.Item>
     <Form.Item
@@ -55,6 +64,7 @@ const AddForm = () => (
       </Button>
     </Form.Item>
   </Form>
+  </Card>
   </>
 );
 export default AddForm;
