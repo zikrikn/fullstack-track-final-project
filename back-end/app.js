@@ -2,12 +2,13 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const routes = require('./routers/route');
+import 'dotenv/config';
 
 const app = express();
 const PORT = 3000;
-const MONGODB_URI = "mongodb://127.0.0.1:27017/tokoplay";
+const uri = process.env.DB_URI;
 
-mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('Connected to MongoDB'))
   .catch((err) => console.error('Error connecting to MongoDB:', err));
 
