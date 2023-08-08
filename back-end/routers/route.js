@@ -1,8 +1,8 @@
-const express = require("express");
+import express from "express";
 const router = express.Router();
-const videoController = require("../controllers/videoController");
-const productController = require("../controllers/productController");
-const commentController = require("../controllers/commentController");
+import videoController from "../controllers/videoController.js"; 
+import productController from "../controllers/productController.js"; 
+import commentController from "../controllers/commentController.js";
 
 // Video Thumbnail List
 router.get("/videos", videoController.getVideoList);
@@ -16,4 +16,4 @@ router.get("/comments/:videoId", commentController.getCommentList);
 // Submit Comment
 router.post("/comments", commentController.submitComment);
 
-module.exports = router;
+export default router;

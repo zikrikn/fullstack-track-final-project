@@ -1,9 +1,9 @@
-const { getAllVideos } = require("../services/videoService");
+import VideoService from "../services/videoService.js";
 
 class VideoController {
   async getVideoList(req, res, next) {
     try {
-      const videos = await getAllVideos();
+      const videos = await VideoService.getAllVideos();
       res.json(videos);
     } catch (err) {
       next(err);
@@ -11,4 +11,4 @@ class VideoController {
   }
 }
 
-module.exports = new VideoController();
+export default new VideoController();

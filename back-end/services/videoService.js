@@ -1,4 +1,4 @@
-const Video = require('../models/video');
+import Video from '../models/video.js';
 
 class VideoService {
   async getAllVideos() {
@@ -10,4 +10,4 @@ class VideoService {
   }
 }
 
-module.exports = new VideoService();
+export default new VideoService();

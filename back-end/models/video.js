@@ -1,8 +1,8 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const videoSchema = new mongoose.Schema({
   videoId: { type: String, required: true },
   thumbnailUrl: { type: String, required: true },
 });
 
-module.exports = mongoose.model("Video", videoSchema);
+export default mongoose.model("Video", videoSchema);

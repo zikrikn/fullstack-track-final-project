@@ -1,7 +1,8 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const mongoose = require('mongoose');
-const routes = require('./routers/route');
+import bodyParser from "body-parser";
+import express from "express";
+import mongoose from "mongoose";
+import cors from "cors";
+import routes from "./routers/route.js";
 import 'dotenv/config';
 
 const app = express();
@@ -12,6 +13,7 @@ mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('Connected to MongoDB'))
   .catch((err) => console.error('Error connecting to MongoDB:', err));
 
+app.use(cors());
 app.use(bodyParser.json());
 
 app.use('/api', routes);
