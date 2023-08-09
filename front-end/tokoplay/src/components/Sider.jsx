@@ -7,7 +7,7 @@ const App = () => (
   style={{ margin:'0 0 10px 0' }}
   >
     <p>
-      <b style="font-size: 17px">Card content</b>
+      <b style={{ fontSize: '17px' }}>Card content</b>
       <br />
       Price: $120
     </p>
@@ -17,7 +17,7 @@ const App = () => (
   style={{ margin:'0 0 10px 0' }}
   >
     <p>
-    <b style="font-size: 17px">Card content</b>
+    <b style={{ fontSize: '17px' }}>Card content</b>
       <br />
       Price: $120
     </p>
@@ -27,7 +27,7 @@ const App = () => (
   style={{ margin:'0 0 10px 0' }}
   >
     <p>
-    <b style="font-size: 17px">Card content</b>
+    <b style={{fontSize: '17px'}}>Card content</b>
       <br />  
       Price: $120
     </p>
