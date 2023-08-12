@@ -1,20 +1,38 @@
-const MenuWithYouTube = () => {
-    return (
-        <div>
-            <h2>Judul Youtube dari DB</h2>
-            <div>
-                {/* Ganti kode iframe di bawah dengan kode embed video YouTube Anda */}
-                <iframe
-                    width="560"
-                    height="315"
-                    src="https://www.youtube.com/embed/NdA6aQR-s4U"
-                    title="YouTube video player"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                ></iframe>
-            </div>
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
+
+const MainYoutube = () => {
+  const { videoId } = useParams();
+  const [videoData, setVideoData] = useState({});
+
+  useEffect(() => {
+    axios.get(`https://backend-imrz.onrender.com/api/videos/${videoId}`)
+      .then(response => {
+        setVideoData(response.data);
+      })
+      .catch(error => {
+        console.error('Error fetching video data:', error);
+      });
+  }, [videoId]);
+
+  return (
+    <div>
+      <div>
+        <h2>{videoData.title}</h2>
+        <div style={{ margin: '0 30px 0 30px' }}>
+        <iframe
+          width="100%"
+          height="500px"
+          src={`https://www.youtube.com/embed/${videoData.videoId}`}
+          title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
-export default MenuWithYouTube;
+export default MainYoutube;

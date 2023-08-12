@@ -1,37 +1,48 @@
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 import { Card } from 'antd';
-const App = () => (
-  <>
-  <h2>Product List</h2>
-  <Card
-  hoverable
-  style={{ margin:'0 0 10px 0' }}
-  >
-    <p>
-      <b style={{ fontSize: '17px' }}>Card content</b>
-      <br />
-      Price: $120
-    </p>
-  </Card>
-  <Card
-  hoverable
-  style={{ margin:'0 0 10px 0' }}
-  >
-    <p>
-    <b style={{ fontSize: '17px' }}>Card content</b>
-      <br />
-      Price: $120
-    </p>
-  </Card>
-  <Card
-  hoverable
-  style={{ margin:'0 0 10px 0' }}
-  >
-    <p>
-    <b style={{fontSize: '17px'}}>Card content</b>
-      <br />  
-      Price: $120
-    </p>
-  </Card>
-  </>
-);
-export default App;
+import { useParams } from 'react-router-dom'; // Import useParams
+
+const Sider = () => {
+  const { videoId } = useParams(); // Get videoId from route parameters
+  const [productData, setProductData] = useState([]);
+  
+  // Fetch product data based on videoId
+  useEffect(() => {
+    axios.get(`https://backend-imrz.onrender.com/api/products/${videoId}`)
+      .then(response => {
+        setProductData(response.data);
+      })
+      .catch(error => {
+        console.error('Error fetching product data:', error);
+      });
+  }, [videoId]);
+
+  return (
+    <>
+      <h2>Product List</h2>
+      {productData.map(product => (
+        <a
+        key={product._id}
+        href={product.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        >
+        <Card
+          key={product._id}
+          hoverable
+          style={{ margin: '0 0 10px 0' }}
+        >
+          <p>
+            <b style={{ fontSize: '17px' }}>{product.title}</b>
+            <br />
+            Price: {product.price} Rupiah
+          </p>
+        </Card>
+        </a>
+      ))}
+    </>
+  );
+};
+
+export default Sider;

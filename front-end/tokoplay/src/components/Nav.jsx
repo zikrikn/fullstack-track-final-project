@@ -1,20 +1,28 @@
 import { useState } from 'react';
-import { AppstoreOutlined, HomeOutlined} from '@ant-design/icons';
+import { AppstoreOutlined, InstagramOutlined} from '@ant-design/icons';
 import { Menu } from 'antd';
 const items = [
   {
-    label: 'Home',
+    label: (
+      <a href="/" rel="noopener noreferrer">
+        Home
+      </a>
+    ),
     key: 'home',
-    icon: <HomeOutlined />,
+    icon: <AppstoreOutlined />,
   },
   {
-    label: 'LIVE',
-    key: 'live',
-    icon: <AppstoreOutlined />,
+    label: (
+      <a href="https://www.instagram.com/zikrixyo/" rel="noopener noreferrer" target="_blank"> 
+        Creator&apos;s Instagram
+      </a>
+    ),
+    key: 'Instagram',
+    icon: <InstagramOutlined />,
   },
 ];
 const App = () => {
-  const [current, setCurrent] = useState('mail');
+  const [current, setCurrent] = useState('home');
   const onClick = (e) => {
     console.log('click ', e);
     setCurrent(e.key);
