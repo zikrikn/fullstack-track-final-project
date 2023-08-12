@@ -18,9 +18,8 @@ const MainYoutube = () => {
 
   return (
     <div>
-      <div>
+      <div style={{ margin: '0 30px 0 30px' }}>
         <h2>{videoData.title}</h2>
-        <div style={{ margin: '0 30px 0 30px' }}>
         <iframe
           width="100%"
           height="500px"
@@ -30,7 +29,6 @@ const MainYoutube = () => {
           allowFullScreen
         ></iframe>
         </div>
-      </div>
     </div>
   );
 };
