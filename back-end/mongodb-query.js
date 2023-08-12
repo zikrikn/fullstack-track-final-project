@@ -261,7 +261,6 @@ db.products.insertMany([
     price: 69000
   }
 ]);
-  
 
 // 6 - Insert Data Products to MongoDB
 db.products.insertMany([

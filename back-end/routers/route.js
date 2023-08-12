@@ -7,6 +7,9 @@ import commentController from "../controllers/commentController.js";
 // Video Thumbnail List
 router.get("/videos", videoController.getVideoList);
 
+// Video Detail
+router.get("/videos/:videoId", videoController.getVideo);
+
 // Product List
 router.get("/products/:videoId", productController.getProductList);
 

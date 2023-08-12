@@ -9,6 +9,16 @@ class VideoController {
       next(err);
     }
   }
+
+  async getVideo(req, res, next) {
+    const { videoId } = req.params;
+    try {
+      const video = await VideoService.getVideoById(videoId);
+      res.json(video);
+    } catch (err) {
+      next(err);
+    }
+  }
 }
 
 export default new VideoController();

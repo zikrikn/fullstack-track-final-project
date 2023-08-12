@@ -8,6 +8,14 @@ class VideoService {
       throw new Error('Failed to fetch videos');
     }
   }
+
+  async getVideoById(videoId) {
+    try {
+      return await Video.findOne({ videoId }, 'videoId thumbnailUrl live title description viewers');
+    } catch (err) {
+      throw new Error('Failed to fetch video');
+    }
+  }
 }
 
 export default new VideoService();
