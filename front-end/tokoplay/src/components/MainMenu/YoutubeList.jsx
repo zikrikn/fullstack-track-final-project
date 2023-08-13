@@ -1,23 +1,13 @@
-import { useState, useEffect } from 'react';
 import { Card, List, Tag } from 'antd';
 import { PlayCircleOutlined } from '@ant-design/icons';
-import axios from 'axios';
 import { Link } from 'react-router-dom';
 import './styles/YoutubeList.css';
+import useVideoData from '../../hooks/useVideosData.jsx';
+
 const { Meta } = Card;
 
-const App = () => {
-  const [videoData, setVideoData] = useState([]);
-
-  useEffect(() => {
-    axios.get('https://backend-imrz.onrender.com/api/videos')
-      .then(response => {
-        setVideoData(response.data);
-      })
-      .catch(error => {
-        console.error('Error fetching data:', error);
-      });
-  }, []);
+const YoutubeList = () => {
+  const videoData = useVideoData();
 
   return (
     <List
@@ -33,8 +23,7 @@ const App = () => {
       dataSource={videoData}
       renderItem={item => (
         <List.Item>
-          
-          <Link to={`/detail/${item.videoId}`}> {/* add Link to Card */}
+          <Link to={`/detail/${item.videoId}`}>
             <Card
               hoverable
               cover={<img alt={item.title} src={item.thumbnailUrl} />}
@@ -56,4 +45,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default YoutubeList;

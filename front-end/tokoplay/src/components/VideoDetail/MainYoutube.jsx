@@ -1,20 +1,9 @@
-import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import axios from 'axios';
+import useVideoDetails from '../../hooks/useVideoDetail.jsx';
 
 const MainYoutube = () => {
   const { videoId } = useParams();
-  const [videoData, setVideoData] = useState({});
-
-  useEffect(() => {
-    axios.get(`https://backend-imrz.onrender.com/api/videos/${videoId}`)
-      .then(response => {
-        setVideoData(response.data);
-      })
-      .catch(error => {
-        console.error('Error fetching video data:', error);
-      });
-  }, [videoId]);
+  const videoData = useVideoDetails(videoId);
 
   return (
     <div>

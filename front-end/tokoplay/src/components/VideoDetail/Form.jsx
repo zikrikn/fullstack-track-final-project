@@ -1,7 +1,6 @@
-import { useState, useEffect, useCallback } from 'react';
 import { Button, Form, Input, Card, Divider } from 'antd';
-import axios from 'axios';
 import { useParams } from 'react-router-dom';
+import useComments from '../../hooks/useComments.jsx';
 
 const layout = {
   wrapperCol: {
@@ -15,28 +14,7 @@ const validateMessages = {
 
 const AddForm = () => {
   const { videoId } = useParams();
-  const [comments, setComments] = useState([]);
-
-  const fetchComments = useCallback(async () => {
-    try {
-      const response = await axios.get(`https://backend-imrz.onrender.com/api/comments/${videoId}`);
-      setComments(response.data);
-    } catch (error) {
-      console.error('Error fetching comments:', error);
-    }
-  }, [videoId]);
-
-  useEffect(() => {
-    // Fetch comments initially
-    fetchComments();
-
-    // Poll for new comments every 5 seconds (adjust as needed)
-    const interval = setInterval(fetchComments, 5000);
-
-    return () => {
-      clearInterval(interval);
-    };
-  }, [fetchComments, videoId]);
+  const { comments, sendComment } = useComments(videoId);
 
   const onFinish = async (values) => {
     const newComment = {
@@ -45,13 +23,7 @@ const AddForm = () => {
       videoId: videoId,
     };
 
-    try {
-      await axios.post('https://backend-imrz.onrender.com/api/comments', newComment);
-      // Fetch comments after posting to get the latest updates
-      fetchComments();
-    } catch (error) {
-      console.error('Error posting comment:', error);
-    }
+    sendComment(newComment); // Menggunakan fungsi sendComment dari custom hook
   };
 
   return (
