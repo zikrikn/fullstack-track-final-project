@@ -1,8 +1,8 @@
 // import React from 'react';
-import AddSider from './components/Sider.jsx';
-import AddForm from './components/Form.jsx';
-import AddNav from './components/Nav.jsx';
-import AddYoutube from './components/MainYoutube.jsx';
+import AddSider from './Sider.jsx';
+import AddForm from './Form.jsx';
+import AddNav from './Nav.jsx';
+import AddYoutube from './MainYoutube.jsx';
 import { Layout, Space } from 'antd';
 const { Header, Footer, Sider, Content } = Layout;
 const headerStyle = {

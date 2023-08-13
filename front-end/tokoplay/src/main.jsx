@@ -1,13 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-// import App from "./MainApp.jsx";
 import "./index.css";
 import {
     createBrowserRouter,
     RouterProvider,
   } from "react-router-dom";
-import MainApp from "./MainApp.jsx";
-import VideoDetail from "./VideoDetail.jsx"; // Import the component for video detail page
+import MainApp from "./components/MainMenu/MainApp.jsx";
+import VideoDetail from "./components/VideoDetail/VideoDetail.jsx";
 
 const router = createBrowserRouter([
 {

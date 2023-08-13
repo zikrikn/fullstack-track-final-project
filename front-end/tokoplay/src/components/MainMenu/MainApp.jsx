@@ -1,6 +1,6 @@
 import { Layout, Space } from 'antd';
-import AddNav from './components/Nav.jsx';
-import AddYoutubeList from './components/YoutubeList.jsx';
+import AddNav from '../VideoDetail/Nav.jsx';
+import AddYoutubeList from './YoutubeList.jsx';
 const { Header, Footer, Content } = Layout;
 const headerStyle = {
   textAlign: 'center',

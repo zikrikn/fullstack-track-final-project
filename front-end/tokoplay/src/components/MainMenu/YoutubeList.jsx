@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 import { Card, List, Tag } from 'antd';
 import { PlayCircleOutlined } from '@ant-design/icons';
 import axios from 'axios';
-import { Link } from 'react-router-dom'; // import Link from react-router-dom
-import '../YoutubeList.css'; // Pastikan Anda memiliki file CSS yang sesuai
+import { Link } from 'react-router-dom';
+import './styles/YoutubeList.css';
 const { Meta } = Card;
 
 const App = () => {
