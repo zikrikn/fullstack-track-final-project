@@ -1,13 +1,12 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Card } from 'antd';
-import { useParams } from 'react-router-dom'; // Import useParams
+import { useParams } from 'react-router-dom';
 
 const Sider = () => {
-  const { videoId } = useParams(); // Get videoId from route parameters
+  const { videoId } = useParams();
   const [productData, setProductData] = useState([]);
   
-  // Fetch product data based on videoId
   useEffect(() => {
     axios.get(`https://backend-imrz.onrender.com/api/products/${videoId}`)
       .then(response => {

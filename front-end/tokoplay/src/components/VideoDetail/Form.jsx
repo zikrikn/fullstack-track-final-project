@@ -23,7 +23,7 @@ const AddForm = () => {
       videoId: videoId,
     };
 
-    sendComment(newComment); // Menggunakan fungsi sendComment dari custom hook
+    sendComment(newComment);
   };
 
   return (
