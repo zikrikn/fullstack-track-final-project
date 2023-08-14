@@ -1,4 +1,4 @@
-**Dokumentasi Menjalankan Front-End Aplikasi Tokoplay**
+**Dokumentasi Menjalankan Aplikasi Tokoplay**
 
 ## Langkah 1: Kloning Repositori
 
@@ -9,7 +9,7 @@
    git clone <URL_REPO_ANDA>
    ```
 
-3. Masuk ke dalam direktori repository yang baru saja Anda kloning:
+3. Masuk ke dalam direktori repository yang baru saja dikloning:
    ```bash
    cd nama-repo
    ```
@@ -49,4 +49,4 @@
 
 2. Setelah perintah selesai, direktori `dist` akan berisi hasil build yang siap untuk diterapkan di server produksi.
 
-Aplikasi sekarang telah berhasil menjalankan front-end aplikasi Tokoplay.
+Aplikasi sekarang telah berhasil menjalankan aplikasi Tokoplay.
