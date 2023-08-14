@@ -6,6 +6,10 @@ The database structure for this application includes three main collections: `vi
    - Schema:
      - `videoId`: A unique identifier for each video from YouTube.
      - `thumbnailUrl`: URL of the image thumbnail for the video.
+     - `title`: The title of the video.
+     - `description`: The description of the video.
+     - `live`: A boolean value indicating whether the video is currently live or not.
+     - `viewers`: The number of viewers watching the video.
 
 2. `products` collection:
    - Schema:
@@ -38,6 +42,7 @@ ii. Folder Structure:
   - commentService.js
 - routes
   - route.js
+- app.js
 ```
 
 iii. API Structure:
@@ -48,6 +53,9 @@ The API structure follows RESTful principles, using Express.js as the server fra
    - URL: `/api/videos`
    - HTTP Method: GET
    - Purpose: Fetches a list of videos with their videoIds and thumbnail URLs.
+   - URL: `/api/videos/:videoId`
+   - HTTP Method: GET
+   - Purpose: Fetches a specific video based on its `videoId`.
 
 2. Product Endpoint:
    - URL: `/api/products/:videoId`
@@ -64,7 +72,7 @@ The API structure follows RESTful principles, using Express.js as the server fra
 
 iv. List API Requests and Responses:
 
-1. Video Thumbnail List:
+1. Videos List:
    - Request:
      - URL: `/api/videos`
      - Method: GET
@@ -74,18 +82,42 @@ iv. List API Requests and Responses:
        {
          "_id": <bson.ObjectId>,
          "videoId": <videoId>,
-         "thumbnailUrl": string
+         "thumbnailUrl": string,
+         "title": string,
+         "description": string,
+         "live": boolean,
+         "viewers": integer
        },
        {
          "_id": <bson.ObjectId>,
          "videoId": <videoId>,
-         "thumbnailUrl": string
+         "thumbnailUrl": string,   
+         "title": string,
+         "description": string,
+         "live": boolean,
+         "viewers": integer
        },
        ...
      ]
      ```
+2. Get Video:
+   - Request:
+     - URL: `/api/videos/:videoId`
+     - Method: GET
+   - Response:
+     ```
+     {
+       "_id": <bson.ObjectId>,
+       "videoId": <videoId>,
+       "thumbnailUrl": string,
+       "title": string,
+       "description": string,
+       "live": boolean,
+       "viewers": integer
+     }
+     ```
 
-2. Product List:
+3. Product List:
    - Request:
      - URL: `/api/products/:videoId`
      - Method: GET
@@ -108,7 +140,7 @@ iv. List API Requests and Responses:
      ]
      ```
 
-3. Comment List:
+4. Comment List:
    - Request:
      - URL: `/api/comments/:videoId`
      - Method: GET
@@ -131,7 +163,7 @@ iv. List API Requests and Responses:
      ]
      ```
 
-4. Submit Comment:
+5. Submit Comment:
    - Request:
      - URL: `/api/comments`
      - Method: POST
