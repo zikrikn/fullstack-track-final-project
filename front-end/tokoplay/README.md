@@ -1,19 +1,17 @@
-**Dokumentasi untuk menjalankan front-end aplikasi tokoplay.**
+**Dokumentasi Menjalankan Front-End Aplikasi Tokoplay**
 
----
-
-## Langkah 1: Clone Repository
+## Langkah 1: Kloning Repositori
 
 1. Buka terminal atau command prompt.
 
-2. Clone repository di GitHub ke direktori lokal:
+2. Kloning repository dari GitHub ke direktori lokal:
    ```bash
    git clone <URL_REPO_ANDA>
    ```
 
-3. Masuk ke direktori repository yang baru saja Anda clone:
+3. Masuk ke dalam direktori repository yang baru saja Anda kloning:
    ```bash
-   cd nama-repo-anda
+   cd nama-repo
    ```
 
 ## Langkah 2: Instalasi Dependencies
@@ -36,7 +34,7 @@
 
 ## Langkah 4: Mengedit Aplikasi
 
-1. Buka direktori proyek Anda dengan editor kode Anda.
+1. Buka direktori proyek Anda dengan editor kode favorit.
 
 2. Modifikasi file di dalam direktori `src` sesuai kebutuhan Anda. File `App.jsx` adalah titik awal aplikasi React.
 
@@ -51,6 +49,4 @@
 
 2. Setelah perintah selesai, direktori `dist` akan berisi hasil build yang siap untuk diterapkan di server produksi.
 
-## Langkah 6: Kolaborasi atau Berbagi
-
-Anda sekarang telah berhasil menjalankan front-end aplikasi tokoplay
+Aplikasi sekarang telah berhasil menjalankan front-end aplikasi Tokoplay.
