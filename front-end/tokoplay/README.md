@@ -53,6 +53,6 @@ Dokumentasi untuk menjalankan front-end aplikasi tokoplay.
 
 2. Setelah perintah selesai, direktori `dist` akan berisi hasil build yang siap untuk diterapkan di server produksi.
 
-## Langkah 7: Kolaborasi atau Berbagi
+## Langkah 6: Kolaborasi atau Berbagi
 
 Anda sekarang telah berhasil menjalankan front-end aplikasi tokoplay
