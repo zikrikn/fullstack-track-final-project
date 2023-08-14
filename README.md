@@ -2,6 +2,10 @@
 
 Tokoplay adalah proyek sederhana yang menggunakan stack MERN (MongoDB, Express.js, React.js, dan Node.js) untuk memenuhi tugas final project.
 
+### The hosted URL of your project. (Backend and Frontend)
+- Front-end: [https://fullstack-track-final-project-gigih-3-0.vercel.app/](https://fullstack-track-final-project-gigih-3-0.vercel.app/)
+- Back-end: [https://backend-imrz.onrender.com/](https://backend-imrz.onrender.com/) (The main is not set to any endpoints, you can check it here [https://backend-imrz.onrender.com/api/videos](https://backend-imrz.onrender.com/api/videos)) - Please wait around 1-3 minutes first.
+
 ### Fitur
 - Terdapat dua halaman: Beranda dan Detail Video
 - Pengguna dapat melihat daftar video dengan thumbnail dari YouTube yang telah disimpan di halaman beranda
