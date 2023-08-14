@@ -1,6 +1,6 @@
 **Tokoplay - Dokumentasi**
 
-Tokoplay adalah proyek sederhana yang menggunakan stack MERN (MongoDB, Express.js, React.js, dan Node.js) untuk memenuhi tugas final project.
+Tokoplay adalah proyek sederhana menggunakan stack MERN (MongoDB, Express.js, React.js, dan Node.js) untuk memenuhi tugas final project.
 
 ### The hosted URL of your project. (Backend and Frontend)
 - Front-end: [https://fullstack-track-final-project-gigih-3-0.vercel.app/](https://fullstack-track-final-project-gigih-3-0.vercel.app/)
