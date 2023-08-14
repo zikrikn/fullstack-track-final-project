@@ -1,6 +1,4 @@
-**Dokumentasi GitHub: Menjalankan Aplikasi Tokoplay**
-
-Dokumentasi untuk menjalankan front-end aplikasi tokoplay.
+**Dokumentasi untuk menjalankan front-end aplikasi tokoplay.**
 
 ---
 
